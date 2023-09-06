@@ -1,14 +1,23 @@
+makerbit.onIrButton(IrButton.NUM8, IrButtonAction.Pressed, function () {
+    basic.showNumber(8)
+})
 makerbit.onIrButton(IrButton.NUM6, IrButtonAction.Pressed, function () {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_SpinLeft)
 })
 makerbit.onIrButton(IrButton.NUM3, IrButtonAction.Pressed, function () {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
 })
+makerbit.onIrButton(IrButton.TLeft, IrButtonAction.Pressed, function () {
+    mbit_Robot.RGB_Car_Program().showColor(neopixel.colors(NeoPixelColors.Violet))
+})
 makerbit.onIrButton(IrButton.Light, IrButtonAction.Pressed, function () {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Pinkish)
 })
 makerbit.onIrButton(IrButton.NUM9, IrButtonAction.Pressed, function () {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_SpinRight)
+})
+makerbit.onIrButton(IrButton.NUM7, IrButtonAction.Pressed, function () {
+    basic.showNumber(7)
 })
 makerbit.onIrButton(IrButton.Right, IrButtonAction.Pressed, function () {
     mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_Right, 103)
@@ -53,6 +62,9 @@ makerbit.onIrButton(IrButton.NUM0, IrButtonAction.Pressed, function () {
 })
 makerbit.onIrButton(IrButton.BEEP, IrButtonAction.Pressed, function () {
     mbit_Robot.Music_Car(mbit_Robot.enMusic.power_up)
+})
+makerbit.onIrButton(IrButton.TRight, IrButtonAction.Pressed, function () {
+    mbit_Robot.RGB_Car_Program().clear()
 })
 makerbit.onIrButton(IrButton.Plus, IrButtonAction.Pressed, function () {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Green)
