@@ -22,6 +22,9 @@ makerbit.onIrButton(IrButton.Down, IrButtonAction.Pressed, function () {
     basic.pause(1000)
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
 })
+makerbit.onIrButton(IrButton.NUM4, IrButtonAction.Pressed, function () {
+    mbit_Robot.RGB_Car_Program().showBarGraph(0, 255)
+})
 makerbit.onIrButton(IrButton.NUM2, IrButtonAction.Pressed, function () {
     mbit_Robot.RGB_Car_Program().showRainbow(1, 360)
 })
