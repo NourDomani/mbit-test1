@@ -54,6 +54,9 @@ makerbit.onIrButton(IrButton.NUM5, IrButtonAction.Pressed, function () {
 makerbit.onIrButton(IrButton.Power, IrButtonAction.Pressed, function () {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.OFF)
 })
+input.onLogoEvent(TouchButtonEvent.Touched, function () {
+    music.play(music.stringPlayable("C5 B A G F E D C ", 47), music.PlaybackMode.UntilDone)
+})
 makerbit.onIrButton(IrButton.NUM1, IrButtonAction.Pressed, function () {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Blue)
 })
