@@ -1,3 +1,10 @@
+#this is test
+def on_ir_button_num8_pressed():
+    mbit_Robot.car_ctrl(mbit_Robot.CarState.CAR_SPINRIGHT)
+makerbit.on_ir_button(IrButton.NUM8,
+    IrButtonAction.PRESSED,
+    on_ir_button_num8_pressed)
+
 def on_ir_button_num6_pressed():
     mbit_Robot.car_ctrl(mbit_Robot.CarState.CAR_SPINLEFT)
 makerbit.on_ir_button(IrButton.NUM6,
@@ -17,10 +24,16 @@ makerbit.on_ir_button(IrButton.LIGHT,
     on_ir_button_light_pressed)
 
 def on_ir_button_num9_pressed():
-    mbit_Robot.car_ctrl(mbit_Robot.CarState.CAR_SPINRIGHT)
+    mbit_Robot.RGB_Car_Program().show_color(neopixel.colors(NeoPixelColors.RED))
 makerbit.on_ir_button(IrButton.NUM9,
     IrButtonAction.PRESSED,
     on_ir_button_num9_pressed)
+
+def on_ir_button_num7_pressed():
+    basic.show_number(7)
+makerbit.on_ir_button(IrButton.NUM7,
+    IrButtonAction.PRESSED,
+    on_ir_button_num7_pressed)
 
 def on_ir_button_right_pressed():
     mbit_Robot.car_ctrl_speed(mbit_Robot.CarState.CAR_RIGHT, 103)
@@ -82,6 +95,10 @@ makerbit.on_ir_button(IrButton.POWER,
     IrButtonAction.PRESSED,
     on_ir_button_power_pressed)
 
+def on_logo_touched():
+    basic.show_number(input.temperature())
+input.on_logo_event(TouchButtonEvent.TOUCHED, on_logo_touched)
+
 def on_ir_button_num1_pressed():
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.BLUE)
 makerbit.on_ir_button(IrButton.NUM1,
@@ -95,10 +112,17 @@ makerbit.on_ir_button(IrButton.NUM0,
     on_ir_button_num0_pressed)
 
 def on_ir_button_beep_pressed():
-    mbit_Robot.Music_Car(mbit_Robot.enMusic.POWER_UP)
+    mbit_Music.buzzer(DigitalPin.P0, mbit_Music.enBuzzer.BEEP)
+    mbit_Robot.Music_Car(mbit_Robot.enMusic.RINGTONE)
 makerbit.on_ir_button(IrButton.BEEP,
     IrButtonAction.PRESSED,
     on_ir_button_beep_pressed)
+
+def on_ir_button_tright_pressed():
+    mbit_Robot.RGB_Car_Program().show_color(neopixel.colors(NeoPixelColors.GREEN))
+makerbit.on_ir_button(IrButton.TRIGHT,
+    IrButtonAction.PRESSED,
+    on_ir_button_tright_pressed)
 
 def on_ir_button_plus_pressed():
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.GREEN)
