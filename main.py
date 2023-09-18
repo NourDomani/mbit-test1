@@ -1,4 +1,5 @@
-#this is test
+# this is the maine programme for the ir remote controlle
+
 def on_ir_button_num8_pressed():
     mbit_Robot.car_ctrl(mbit_Robot.CarState.CAR_SPINRIGHT)
 makerbit.on_ir_button(IrButton.NUM8,
@@ -17,6 +18,12 @@ makerbit.on_ir_button(IrButton.NUM3,
     IrButtonAction.PRESSED,
     on_ir_button_num3_pressed)
 
+def on_ir_button_tleft_pressed():
+    mbit_Robot.RGB_Car_Program().show_color(neopixel.colors(NeoPixelColors.BLACK))
+makerbit.on_ir_button(IrButton.TLEFT,
+    IrButtonAction.PRESSED,
+    on_ir_button_tleft_pressed)
+
 def on_ir_button_light_pressed():
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.PINKISH)
 makerbit.on_ir_button(IrButton.LIGHT,
@@ -30,7 +37,8 @@ makerbit.on_ir_button(IrButton.NUM9,
     on_ir_button_num9_pressed)
 
 def on_ir_button_num7_pressed():
-    basic.show_number(7)
+    mbit_Music.buzzer(DigitalPin.P0, mbit_Music.enBuzzer.BEEP)
+    mbit_Robot.Music_Car(mbit_Robot.enMusic.DADADUM)
 makerbit.on_ir_button(IrButton.NUM7,
     IrButtonAction.PRESSED,
     on_ir_button_num7_pressed)
@@ -119,7 +127,7 @@ makerbit.on_ir_button(IrButton.BEEP,
     on_ir_button_beep_pressed)
 
 def on_ir_button_tright_pressed():
-    mbit_Robot.RGB_Car_Program().show_color(neopixel.colors(NeoPixelColors.GREEN))
+    mbit_Robot.RGB_Car_Program().show_color(neopixel.colors(NeoPixelColors.RED))
 makerbit.on_ir_button(IrButton.TRIGHT,
     IrButtonAction.PRESSED,
     on_ir_button_tright_pressed)

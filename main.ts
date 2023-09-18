@@ -1,4 +1,4 @@
-// this is test
+//  this is the maine programme for the ir remote controlle
 makerbit.onIrButton(IrButton.NUM8, IrButtonAction.Pressed, function on_ir_button_num8_pressed() {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_SpinRight)
 })
@@ -8,6 +8,9 @@ makerbit.onIrButton(IrButton.NUM6, IrButtonAction.Pressed, function on_ir_button
 makerbit.onIrButton(IrButton.NUM3, IrButtonAction.Pressed, function on_ir_button_num3_pressed() {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
 })
+makerbit.onIrButton(IrButton.TLeft, IrButtonAction.Pressed, function on_ir_button_tleft_pressed() {
+    mbit_Robot.RGB_Car_Program().showColor(neopixel.colors(NeoPixelColors.Black))
+})
 makerbit.onIrButton(IrButton.Light, IrButtonAction.Pressed, function on_ir_button_light_pressed() {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Pinkish)
 })
@@ -15,7 +18,8 @@ makerbit.onIrButton(IrButton.NUM9, IrButtonAction.Pressed, function on_ir_button
     mbit_Robot.RGB_Car_Program().showColor(neopixel.colors(NeoPixelColors.Red))
 })
 makerbit.onIrButton(IrButton.NUM7, IrButtonAction.Pressed, function on_ir_button_num7_pressed() {
-    basic.showNumber(7)
+    mbit_Music.Buzzer(DigitalPin.P0, mbit_Music.enBuzzer.Beep)
+    mbit_Robot.Music_Car(mbit_Robot.enMusic.dadadum)
 })
 makerbit.onIrButton(IrButton.Right, IrButtonAction.Pressed, function on_ir_button_right_pressed() {
     mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_Right, 103)
@@ -66,7 +70,7 @@ makerbit.onIrButton(IrButton.BEEP, IrButtonAction.Pressed, function on_ir_button
     mbit_Robot.Music_Car(mbit_Robot.enMusic.ringtone)
 })
 makerbit.onIrButton(IrButton.TRight, IrButtonAction.Pressed, function on_ir_button_tright_pressed() {
-    mbit_Robot.RGB_Car_Program().showColor(neopixel.colors(NeoPixelColors.Green))
+    mbit_Robot.RGB_Car_Program().showColor(neopixel.colors(NeoPixelColors.Red))
 })
 makerbit.onIrButton(IrButton.Plus, IrButtonAction.Pressed, function on_ir_button_plus_pressed() {
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Green)
